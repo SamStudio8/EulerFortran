@@ -1,10 +1,12 @@
-program problem7
-    integer::i,ul,counter,d,divisible
-    i = 2
-    counter = 1
-    ul = 10001
+program problem10
+    integer::i,divisible,d,limit
+    integer(kind=8)::sum_primes
 
-    do while (counter /= ul)
+    i = 2
+    limit = 2000000
+    sum_primes = 2
+
+    do while(i < limit)
         i = i + 1
         if(mod(i,2) == 0) then
             cycle
@@ -21,8 +23,8 @@ program problem7
         end do
 
         if(divisible == 0) then
-            counter = counter + 1
+            sum_primes = sum_primes + i
         end if
     end do
-    write(*,*) i
+    write(*,*) sum_primes
 end program
