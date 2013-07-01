@@ -3,7 +3,7 @@ pure function is_prime(i)
     integer::d
 
     is_prime = 0
-    if(mod(i,2) == 0) then
+    if(mod(i,2) == 0 .and. i /= 2) then
         return
     end if
     d = 3
@@ -23,9 +23,9 @@ program problem10
     integer::is_prime
     integer(kind=8)::sum_primes
 
-    i = 2
+    i = 1
     limit = 2000000
-    sum_primes = 2
+    sum_primes = 0
 
     do while(i < limit)
         i = i + 1

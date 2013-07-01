@@ -3,7 +3,7 @@ pure function is_prime(i)
     integer::d
 
     is_prime = 0
-    if(mod(i,2) == 0) then
+    if(mod(i,2) == 0 .and. i /= 2) then
         return
     end if
     d = 3
@@ -21,8 +21,8 @@ end function
 program problem7
     integer::i,ul,counter
     integer::is_prime
-    i = 2
-    counter = 1
+    i = 1
+    counter = 0
     ul = 10001
 
     do while (counter /= ul)
